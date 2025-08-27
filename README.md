@@ -67,5 +67,4 @@ This project demonstrates my practical skills as a SOC Analyst, including monito
 - Integrate threat intelligence feeds for proactive hunting
 - Create cross-platform incident response automation
 
-## 📁 Repository Structure
 
