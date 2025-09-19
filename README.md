@@ -144,9 +144,9 @@ Significance: Confirms services are operational and logging (essential for data 
  <img width="1899" height="988" alt="Image" src="https://github.com/user-attachments/assets/78b3319a-d730-4704-ab10-de1d9fb91156" />
 
 **Suricata Log Tail (eve.json)**  
-Visual Summary: JSON alerts from `sudo tail -f /var/log/suricata/eve.json | head -20`, including STUN Binding Requests/Responses (signature ID 2016149/2016150), flow details (e.g., UDP from 10.0.0.17 to IPs like 192.73.242.187), and stats (packets: 97,422, bytes: 24MB).  
+Visual Summary: JSON alerts from `sudo tail -f /var/log/suricata/eve.json | head -20`, including STUN Binding Requests/Responses (signature ID 2016149/2016150), flow details, and stats (packets: 97,422, bytes: 24MB).  
 What Was Conducted: Generated traffic (e.g., UDP/STUN via DVWA or network activity). Ran tail command to capture real-time alerts. Analyzed for patterns (e.g., repeated STUN events).  
-Technical Insights: Alerts: Misc activity, severity 3, metadata (high confidence, informational). Stats: Decoder events (e.g., IPv6 zero_len_padn:913), no invalids/drops. Flows: Timeouts, new/established states. (Added: Analyzed 6k+ alerts, identifying patterns like repeated STUN from 10.0.0.17.)  
+Technical Insights: Alerts: Misc activity, severity 3, metadata (high confidence, informational). Stats: Decoder events (e.g., IPv6 zero_len_padn:913), no invalids/drops. Flows: Timeouts, new/established states. (Added: Analyzed 6k+ alerts, identifying patterns).  
 Significance: Proves IDS is detecting threats (e.g., STUN for NAT traversal, potential VoIP risks). Generates data for downstream logging/visualization.  
 
 <img width="797" height="352" alt="Image" src="https://github.com/user-attachments/assets/49235309-9dd3-4d5b-a3cf-47dd6cc3527f" />
@@ -216,7 +216,7 @@ Significance: Complements logs with traffic visuals.
 <img width="1917" height="1080" alt="image" src="https://github.com/user-attachments/assets/23ca1a91-2def-493a-b293-b408793af646" />
  
 **Terminal - Network Commands**  
-Visual Summary: Outputs from `netstat -tulpn | grep LISTEN`, `ss -tulpn`, `ip addr show` showing ports (e.g., 3001 for ntopng), IPs (10.0.0.17), filesystem usage.  
+Visual Summary: Outputs from `netstat -tulpn | grep LISTEN`, `ss -tulpn`, `ip addr show` showing ports (e.g., 3001 for ntopng), IPs , filesystem usage.  
 What Was Conducted: Ran commands to validate network config.  
 Technical Insights: Confirmed exposed ports and low disk usage (20% on root).  
 Significance: Ensures no conflicts and efficient resource allocation.
